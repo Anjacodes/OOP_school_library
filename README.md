@@ -1,6 +1,6 @@
 # MORSE DECODER
 
-> this project is built to keep track of the books, members, and rentals at a library
+> this project is built to keep track of the books, members, and rentals at a school library
 
 
 ## Getting Started
@@ -9,9 +9,13 @@ You need to have Ruby in you operating system to run the irb terminal.
 > if you don't have Ruby installed in your machine, you can follow [this link](https://github.com/microverseinc/curriculum-ruby/blob/main/simple-ruby/articles/ruby_installation_instructions.md
 ) to find instructions for all operating systems.
 
-* To open the `irb` and play around with the code just type `irb` in your terminal.
+* To open the `irb` and play around with the code just type `irb` in your terminal and copy/paste the code into your irb.
 
-* In order to see the solution, you can run run the command ruby filename.rb in your terminal
+* Else, fork a copy to your repository and clone it locally:
+> `$ git clone https://github.com/Anjacodes/OOP_school_library.git
+$ cd OOP_school_library`
+
+* Now, run the command ruby filename.rb in your terminal to check if solutions are printed correctly.
 
 
 ## Authors
