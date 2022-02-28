@@ -1,4 +1,4 @@
-# MORSE DECODER
+# OOP SCHOOL LIBRARY
 
 > this project is built to keep track of the books, members, and rentals at a school library
 
