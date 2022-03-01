@@ -38,5 +38,5 @@ p person2 = Person.new(17, 'Janet')
 p person2.can_use_services?
 p person2.send(:of_age?)
 
-pp person3 = Person.new(21, 'schiffahrtsgesellschaft')
+person3 = Person.new(21, 'schifffahrtsgesellschaft')
 pp person3.validate_name(person3.name)
