@@ -16,7 +16,7 @@ class Person
   def add_rental(date, book)
     Rental.new(date, book, self)
   end
-  
+
   def can_use_services?
     return true unless @age < 18 || @parent_permission == false
 
@@ -26,7 +26,6 @@ class Person
   def validate_name(_name)
     @name = @name_corrector.correct_name(@name)
   end
-
 
   private
 
