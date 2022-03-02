@@ -35,3 +35,9 @@ pp book1.rentals.count
 pp(book1.rentals.map { |rental| rental.person.name })
 pp student1.rentals.count
 pp(student1.rentals.map { |rental| rental.book.title })
+
+student2.add_rental('2022-02-28', book1)
+pp(student2.rentals.map { |rental| rental.book.title })
+
+book1.add_rental('2022-02-26', student1)
+pp(book1.rentals.map { |rental| rental.person.name })

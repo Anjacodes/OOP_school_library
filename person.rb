@@ -1,4 +1,5 @@
 require './corrector'
+require './rental'
 
 class Person
   attr_accessor :name, :age
@@ -20,6 +21,10 @@ class Person
 
   def validate_name(_name)
     @name = @name_corrector.correct_name(@name)
+  end
+
+  def add_rental(date, book)
+    Rental.new(date, book, self)
   end
 
   private
