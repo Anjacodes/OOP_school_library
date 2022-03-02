@@ -4,5 +4,5 @@ class Corrector
   end
 end
 
-pp check = Corrector.new
-pp check.correct_name('schifffahrtsgesellschaft')
+# pp check = Corrector.new
+# pp check.correct_name('schifffahrtsgesellschaft')

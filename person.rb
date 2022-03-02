@@ -1,14 +1,20 @@
 require './corrector'
+require './rental'
 
 class Person
   attr_accessor :name, :age
-  attr_reader :id
+  attr_reader :id, :rentals
 
   def initialize(age, name = 'Unknown', parent_permission: true)
     @age = age
     @name = name
     @parent_permission = parent_permission
     @name_corrector = Corrector.new
+    @rentals = []
+  end
+
+  def add_rental(date, book)
+    Rental.new(date, book, self)
   end
 
   def can_use_services?
@@ -30,13 +36,13 @@ class Person
   end
 end
 
-p person1 = Person.new(19, 'Harry')
-p person1.can_use_services?
-p person1.send(:of_age?)
+# p person1 = Person.new(19, 'Harry')
+# p person1.can_use_services?
+# p person1.send(:of_age?)
 
-p person2 = Person.new(17, 'Janet')
-p person2.can_use_services?
-p person2.send(:of_age?)
+# p person2 = Person.new(17, 'Janet')
+# p person2.can_use_services?
+# p person2.send(:of_age?)
 
-person3 = Person.new(21, 'schifffahrtsgesellschaft')
-pp person3.validate_name(person3.name)
+# person3 = Person.new(21, 'schifffahrtsgesellschaft')
+# pp person3.validate_name(person3.name)
