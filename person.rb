@@ -1,5 +1,6 @@
 require './corrector'
 require './rental'
+require 'securerandom'
 
 class Person
   attr_accessor :name, :age
@@ -11,6 +12,7 @@ class Person
     @parent_permission = parent_permission
     @name_corrector = Corrector.new
     @rentals = []
+    @id = SecureRandom.uuid.slice(0..3)
   end
 
   def add_rental(date, book)
