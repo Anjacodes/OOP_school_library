@@ -2,9 +2,10 @@ require './list_people'
 require './app'
 
 class Execute
-  def initialize
-    @people = List_People.new
+  def initialize(state)
     @person = App.new
+    @state = state
+    @people = List_People.new(@state)
   end
   def execute(user_choice) # rubocop:disable Metrics/CyclomaticComplexity
     case user_choice.to_i

@@ -12,19 +12,19 @@ class App
   def initialize
     @user_options = ['List all books', 'List all people', 'Create a person', 'Create a book', 'Create a rental',
                      'List all rentals for a given person id', 'Exit']
-    @book_list = []
-    @people_list = []
-    @rental_list = []
+    @state = {book_list: [], people_list: [], rental_list: [], keep_going: true}
   end
 
   def run
-    p 'Please choose an option by entering a number:'
-    @user_options.each_with_index do |option, index|
-      p "#{index + 1} - #{option}"
+    while @state[:keep_going]
+      p 'Please choose an option by entering a number:'
+      @user_options.each_with_index do |option, index|
+        p "#{index + 1} - #{option}"
+      end
+      user_choice = gets.chomp
+      @exec = Execute.new(@state)
+      @exec.execute(user_choice)
     end
-    user_choice = gets.chomp
-    @exec = Execute.new
-    @exec.execute(user_choice)
   end
 
   def list_books
@@ -55,7 +55,7 @@ class App
     print 'Has parent permission? [Y/N]: '
     permission_input = gets.chomp.downcase
     permission = permission_input == 'y'
-    people_list << Student.new(age, name, parent_permission: permission)
+    @state[:people_list] << Student.new(age, name, parent_permission: permission)
     p 'Student created successfully'
     puts ''
     run
@@ -68,7 +68,7 @@ class App
     name = gets.chomp
     print 'Specialization: '
     specialization = gets.chomp
-    @people_list << Teacher.new(specialization, age, name)
+    @state[:people_list] << Teacher.new(specialization, age, name)
     p 'Teacher created successfully'
     puts ''
     run
@@ -123,6 +123,7 @@ class App
   end
 
   def exit_app
+    @state[:keep_going] = false 
     p 'Thank you for using this app!'
   end
 end

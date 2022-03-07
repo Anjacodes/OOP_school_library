@@ -1,8 +1,10 @@
 require './app'
 
-class List_People < App
-  def initialize
-    super
+class List_People
+  def initialize(state)
+    @state = state
+    p(@state)
+    @people_list = @state[:people_list]
   end
 
   def list_people
@@ -14,6 +16,5 @@ class List_People < App
       end
     end
       puts ''
-      run
   end
 end
