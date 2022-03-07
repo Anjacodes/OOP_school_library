@@ -15,7 +15,7 @@ You need to have Ruby in you operating system to run the irb terminal.
 > `$ git clone https://github.com/Anjacodes/OOP_school_library.git
 $ cd OOP_school_library`
 
-* Now, run the command ruby filename.rb in your terminal to check if solutions are printed correctly.
+* Now, run the command ruby main.rb in your terminal to check if solutions are printed correctly.
 
 
 ## Authors
