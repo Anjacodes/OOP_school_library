@@ -27,27 +27,6 @@ class App
     end
   end
 
-  def list_books
-    if @book_list.empty?
-      p 'There are no books in the list, please create a book choosing option 4'
-    else
-      @book_list.each { |book| p "Title: '#{book.title}', Author: #{book.author}" }
-    end
-    puts ''
-    run
-  end
-
-  def create_book
-    print 'Title: '
-    title = gets.chomp
-    print 'Author: '
-    author = gets.chomp
-    @book_list << Book.new(title, author)
-    p 'Book created successfully'
-    puts ''
-    run
-  end
-
   def create_rental
     p 'Select a book from the following list by number'
     @book_list.each_with_index do |book, index|
