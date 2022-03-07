@@ -3,9 +3,10 @@ require './person'
 require './rental'
 require './student'
 require './teacher'
+require './execute'
 
 class App
-  attr_accessor :book_list
+  attr_accessor :book_list, :people_list
   attr_reader :user_options
 
   def initialize
@@ -22,20 +23,8 @@ class App
       p "#{index + 1} - #{option}"
     end
     user_choice = gets.chomp
-    execute(user_choice)
-  end
-
-  def execute(user_choice) # rubocop:disable Metrics/CyclomaticComplexity
-    case user_choice.to_i
-    when 1 then list_books
-    when 2 then list_people
-    when 3 then create_person
-    when 4 then create_book
-    when 5 then create_rental
-    when 6 then rentals_for_id
-    when 7 then exit_app
-    else p 'Please enter a number between 1 and 7'
-    end
+    @exec = Execute.new
+    @exec.execute(user_choice)
   end
 
   def list_books
@@ -43,18 +32,6 @@ class App
       p 'There are no books in the list, please create a book choosing option 4'
     else
       @book_list.each { |book| p "Title: '#{book.title}', Author: #{book.author}" }
-    end
-    puts ''
-    run
-  end
-
-  def list_people
-    if @people_list.empty?
-      p 'There are no people in the list, please create a person7 choosing option 3'
-    else
-      @people_list.each do |person|
-        p "[#{person.class.name}] Name: #{person.name}, ID: #{person.id} Age: #{person.age}"
-      end
     end
     puts ''
     run
