@@ -12,7 +12,7 @@ class App
   def initialize
     @user_options = ['List all books', 'List all people', 'Create a person', 'Create a book', 'Create a rental',
                      'List all rentals for a given person id', 'Exit']
-    @state = {book_list: [], people_list: [], rental_list: [], keep_going: true}
+    @state = { book_list: [], people_list: [], rental_list: [], keep_going: true }
   end
 
   def run
@@ -25,10 +25,5 @@ class App
       @exec = Execute.new(@state)
       @exec.execute(user_choice)
     end
-  end
-
-  def exit_app
-    @state[:keep_going] = false 
-    p 'Thank you for using this app!'
   end
 end

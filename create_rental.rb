@@ -1,11 +1,10 @@
-class Create_Rental
+class CreateRental
   def initialize(state)
     @state = state
     @book_list = @state[:book_list]
     @people_list = @state[:people_list]
     @rental_list = @state[:rental_list]
   end
-
 
   def create_rental
     p 'Select a book from the following list by number'

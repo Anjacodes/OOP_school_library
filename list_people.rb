@@ -1,6 +1,6 @@
 require './app'
 
-class List_People
+class ListPeople
   def initialize(state)
     @state = state
     @people_list = @state[:people_list]
@@ -14,6 +14,6 @@ class List_People
         p "[#{person.class.name}] Name: #{person.name}, ID: #{person.id} Age: #{person.age}"
       end
     end
-      puts ''
+    puts ''
   end
 end

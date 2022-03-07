@@ -1,4 +1,4 @@
-class List_Rentals
+class ListRentals
   def initialize(state)
     @state = state
     @people_list = @state[:people_list]

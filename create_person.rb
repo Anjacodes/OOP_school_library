@@ -1,7 +1,8 @@
-class Create_Person
+class CreatePerson
   def initialize(state)
     @state = state
   end
+
   def create_person
     print 'Do you want to create a student (1)  or a teacher (2)? [Input the number]: '
     user_choice = gets.chomp
@@ -14,7 +15,7 @@ class Create_Person
     when 2 then create_teacher
     else p 'Please enter either 1 or 2'
     end
-    end
+  end
 
   def create_student
     print 'Has parent permission? [Y/N]: '
