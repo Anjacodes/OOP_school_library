@@ -3,7 +3,6 @@ require './app'
 class List_People
   def initialize(state)
     @state = state
-    p(@state)
     @people_list = @state[:people_list]
   end
 
