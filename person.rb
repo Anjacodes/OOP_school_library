@@ -3,8 +3,8 @@ require './rental'
 require 'securerandom'
 
 class Person
-  attr_accessor :name, :age
-  attr_reader :id, :rentals
+  attr_accessor :name, :age, :parent_permission, :id
+  attr_reader :rentals
 
   def initialize(age, name = 'Unknown', parent_permission: true)
     @age = age

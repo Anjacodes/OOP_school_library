@@ -4,7 +4,7 @@ class CreateBook
     @book_list = @state[:book_list]
   end
 
-  def ask_book_details
+  def book_details
     print 'Title: '
     title = gets.chomp
     print 'Author: '
@@ -13,7 +13,7 @@ class CreateBook
   end
 
   def create_book
-    title, author = ask_book_details
+    title, author = book_details
     @book_list << Book.new(title, author)
     p 'Book created successfully'
     puts ''
