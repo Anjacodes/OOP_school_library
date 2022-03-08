@@ -10,10 +10,12 @@ class StorageManager
 
   def fetch_data(state)
     @input.read_books(state)
+    @input.read_people(state)
   end
 
   def save_data(state)
     @output.create_files
     @output.save_books(state)
+    @output.save_people(state)
   end
 end
