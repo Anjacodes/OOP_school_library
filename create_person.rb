@@ -3,7 +3,7 @@ class CreatePerson
     @state = state
   end
 
-  def get_person_details
+  def ask_person_details
     print 'Do you want to create a student (1)  or a teacher (2)? [Input the number]: '
     user_choice = gets.chomp
     print 'Age: '
@@ -13,18 +13,19 @@ class CreatePerson
     if user_choice.to_i == 1
       print 'Has parent permission? [Y/N]: '
       permission_input = gets.chomp.downcase
-    else 
+    else
       print 'Specialization: '
       specialization = gets.chomp
     end
-    {user_choice: user_choice, age: age, name: name, permission_input: permission_input, specialization: specialization  }
+    { user_choice: user_choice, age: age, name: name, permission_input: permission_input,
+      specialization: specialization }
   end
 
   def create_person
-    person_details = get_person_details
+    person_details = ask_person_details
     case person_details[:user_choice].to_i
-    when 1 then create_student(person_details[:age],person_details[:name],person_details[:permission_input])
-    when 2 then create_teacher(person_details[:specialization],person_details[:age],person_details[:name])
+    when 1 then create_student(person_details[:age], person_details[:name], person_details[:permission_input])
+    when 2 then create_teacher(person_details[:specialization], person_details[:age], person_details[:name])
     else p 'Please enter either 1 or 2'
     end
   end

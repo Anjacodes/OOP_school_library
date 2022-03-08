@@ -4,6 +4,7 @@ require './rental'
 require './student'
 require './teacher'
 require './execute'
+require './storage_manager'
 
 class App
   attr_accessor :book_list, :people_list
@@ -13,9 +14,11 @@ class App
     @user_options = ['List all books', 'List all people', 'Create a person', 'Create a book', 'Create a rental',
                      'List all rentals for a given person id', 'Exit']
     @state = { book_list: [], people_list: [], rental_list: [], keep_going: true }
+    @storage_manager = StorageManager.new
   end
 
   def run
+    @storage_manager.fetch_data(@state)
     while @state[:keep_going]
       p 'Please choose an option by entering a number:'
       @user_options.each_with_index do |option, index|
@@ -25,5 +28,6 @@ class App
       @exec = Execute.new(@state)
       @exec.execute(user_choice)
     end
+    @storage_manager.save_data(@state)
   end
 end
