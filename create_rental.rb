@@ -6,7 +6,7 @@ class CreateRental
     @rental_list = @state[:rental_list]
   end
 
-  def create_rental
+  def ask_user_input
     p 'Select a book from the following list by number'
     @book_list.each_with_index do |book, index|
       p "#{index}) Title: '#{book.title}', Author: #{book.author}"
@@ -19,6 +19,11 @@ class CreateRental
     person = @people_list[gets.chomp.to_i]
     print 'Date: '
     date = gets.chomp
+    [book, person, date]
+  end
+
+  def create_rental
+    book, person, date = ask_user_input
     @rental_list << Rental.new(date, book, person)
     p 'Rental created successfully'
     puts ''
