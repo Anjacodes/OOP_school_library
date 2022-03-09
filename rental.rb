@@ -11,6 +11,3 @@ class Rental
     person.rentals << self
   end
 end
-
-# rental_1 = Rental.new('2022-03-02', )
-# pp rental_1

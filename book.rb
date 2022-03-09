@@ -14,6 +14,3 @@ class Book
     Rental.new(date, self, person)
   end
 end
-
-# book_1 = Book.new("Harry Potter", "J.K Rowling")
-# pp book_1
