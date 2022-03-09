@@ -37,14 +37,3 @@ class Person
     false
   end
 end
-
-# p person1 = Person.new(19, 'Harry')
-# p person1.can_use_services?
-# p person1.send(:of_age?)
-
-# p person2 = Person.new(17, 'Janet')
-# p person2.can_use_services?
-# p person2.send(:of_age?)
-
-# person3 = Person.new(21, 'schifffahrtsgesellschaft')
-# pp person3.validate_name(person3.name)
